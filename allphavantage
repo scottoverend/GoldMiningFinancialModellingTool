@@ -1,0 +1,22 @@
+fn main() {
+    let api_key = "YOUR_API_KEY";
+    let stocks1 = vec!["AAPL", "GOOGL", /* ... */]; // First subset (30 stocks)
+    let stocks2 = vec!["MSFT", "TSLA", /* ... */];   // Second subset (10 stocks)
+
+    // Call API for the first subset of 30 stocks
+    for stock_symbol in &stocks1 {
+        // Make API request for each stock in the first subset
+        let url = format!("https://www.alphavantage.co/query?function=YOUR_FUNCTION&symbol={}&apikey={}", stock_symbol, api_key);
+        // Make the API request, process data, etc.
+    }
+
+    // Pause for a minute to comply with the rate limit
+    std::thread::sleep(std::time::Duration::from_secs(60));
+
+    // Call API for the second subset of 10 stocks
+    for stock_symbol in &stocks2 {
+        // Make API request for each stock in the second subset
+        let url = format!("https://www.alphavantage.co/query?function=YOUR_FUNCTION&symbol={}&apikey={}", stock_symbol, api_key);
+        // Make the API request, process data, etc.
+    }
+}
